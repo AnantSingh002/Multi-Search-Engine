@@ -1,0 +1,490 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Roboto", serif; */
+}
+
+body {
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sideBar {
+  height: 100vh;
+  width: 15vw;
+  background-color: #2c3e50;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+  position: fixed;
+  transition: width 0.3s ease;
+}
+
+.sideBar.darkMode {
+  background-color: #121212;
+  color: #00ffff;
+}
+
+.collapsed {
+  width: 5vw;
+}
+
+.newChat,
+.history,
+.sideBottom p {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.collapsed .newChat,
+.collapsed .history,
+.collapsed .sideBottom p {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.newChat {
+  font-weight: 200;
+  border: 1px solid bisque;
+  height: 2rem;
+  width: 80%;
+  text-align: center;
+  align-content: center;
+  border-radius: 5rem;
+  background-color: rgb(243, 198, 144);
+}
+
+.darkMode .newChat {
+  background-color: #ff00ff !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ffff !important;
+}
+
+.history {
+  height: 50vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history p {
+  max-width: 80%;
+  max-height: 10vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.history p:hover {
+  background-color: #717375;
+}
+
+.history::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.sideBottom p {
+  margin: 10px;
+
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  font-size: large;
+  border: 1px solid transparent;
+  padding: 5px;
+}
+
+.sideBottom p:hover {
+  cursor: pointer;
+  width: 80%;
+  background-color: rgb(243, 198, 144);
+  border: 1px solid rgb(243, 198, 144);
+  border-radius: 10px;
+  /* padding: 1px; */
+}
+
+.darkMode .sideBottom p:hover {
+  background-color: #ff00ff !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger svg:hover {
+  border: 1px solid rgb(243, 198, 144);
+  background-color: rgb(243, 198, 144);
+}
+
+.darkMode .hamburger svg:hover {
+  background-color: #ff00ff !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
+}
+
+.main {
+  height: 100vh;
+  width: 85vw;
+
+  padding: 1rem;
+  margin-right: 210px;
+  position: relative;
+  left: 16vw;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  width: 80vw;
+  padding: 1rem;
+}
+
+.nav img {
+  background-color: black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.greet {
+  height: 30vh;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  font-size: 2rem;
+  margin-top: 40px;
+}
+
+.greet h1 {
+  margin-bottom: 20px;
+  background: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.darkMode .greet h1 {
+  background: linear-gradient(to left, blue, #00a3e0, #ff69b4, #000080);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.cards {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0 10px 30px;
+}
+
+.subCards {
+  height: 110%;
+  width: 20%;
+  border-radius: 10px;
+  background-color: #dfe4ea;
+  padding: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+#subCards1.darkMode {
+  background-color: #121212;
+  color: #00ffff;
+}
+#subCards2.darkMode {
+  background-color: #121212;
+  color: #00ffff;
+}
+#subCards3.darkMode {
+  background-color: #121212;
+  color: #00ffff;
+}
+#subCards4.darkMode {
+  background-color: #121212;
+  color: #00ffff;
+}
+
+.subCards:hover {
+  background-color: #b7babe;
+  transform: scaleY(1.1);
+}
+
+.subCards span {
+  position: absolute;
+  z-index: 100;
+  bottom: 5px;
+  right: 5px;
+}
+
+.searchBar {
+  margin: 20px;
+  height: 10vh;
+  width: 70vw;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  border-radius: 5rem;
+  padding-right: 10px;
+}
+
+.searchBar.darkMode {
+  border: 2px solid white;
+  /* background-color: rgb(172, 170, 170); */
+}
+
+.searchBar input {
+  height: 100%;
+  width: 80%;
+  margin-left: 50px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.searchBar input.darkMode {
+  color: #00a3e0;
+  font-size: 1rem;
+  font-weight: 400;
+  /* background-color: #4B0082; */
+}
+
+.searchBar img {
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
+  background: transparent;
+}
+
+.mainBottom {
+  display: flex;
+  gap: 40px;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.mainBottom button {
+  height: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  /* margin: ; */
+}
+
+.mainBottom button:hover {
+  background-color: #717375;
+}
+
+#results {
+ 
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+
+  background-color: rgba(245, 239, 224, 0.253);
+  margin: 10px;
+  padding: 10px;
+}
+
+#results div {
+  background: #eeeeee;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.darkMode #results div {
+  background-color: #1c1c1c;
+  color: #c0c0c0;
+}
+
+.darkMode {
+  background-color: black;
+  color: #00ffff;
+  /* color: aliceblue; */
+}
+
+@media (max-width: 767px) {
+  body {
+    flex-direction: column; /* Stack sidebar and main content */
+  }
+
+  .sideBar {
+    width: 100vw; /* Sidebar takes full width */
+    height: auto; /* Height adjusts to content */
+    position: relative; /* No longer fixed */
+    flex-direction: row; /* Arrange elements horizontally */
+    align-items: center; /* Center vertically */
+    justify-content: space-around;
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  .hamburger {
+    display: block; /* Hamburger always visible */
+  }
+  .hamburger svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  .newChat {
+    width: auto; /* Adjust width as needed */
+    font-size: smaller;
+    height: 1.5rem;
+  }
+
+  .history {
+    display: none; /* Hide history on small screens initially. You can use JavaScript to toggle it if needed. */
+  }
+  .sideBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    font-size: smaller;
+  }
+  .sideBottom p {
+    margin: 5px;
+  }
+  .main {
+    width: 100vw; /* Main content takes full width */
+    margin-left: 0; /* Remove left margin */
+    padding: 0.5rem; /* Reduce padding */
+    margin-top: 50px; /* Adjust top margin to account for the now relative positioned sidebar */
+    left: 0; /* remove left positioning */
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
+  .nav h1 {
+    font-size: 1.5rem;
+  }
+  .nav svg {
+    height: 20px;
+    width: 20px;
+  }
+  .greet {
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center horizontally */
+    padding: 10px;
+    height: auto;
+  }
+
+  .subCards {
+    width: 80%; /* Cards take up most of the width */
+    margin-bottom: 10px; /* Add spacing between cards */
+    height: auto;
+  }
+
+  .searchBar {
+    width: 90vw; /* Search bar takes almost full width */
+    flex-direction: column; /* Stack input and buttons vertically */
+    height: auto; /* Adjust height as needed */
+    padding: 10px;
+    border-radius: 1rem;
+  }
+
+  .searchBar input {
+    width: 100%; /* Input takes full width */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 5px; /* Add spacing between input and buttons */
+  }
+  .searchBar button {
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .mainBottom {
+    flex-direction: column; /* Buttons stacked vertically */
+    align-items: center;
+    gap: 10px;
+  }
+  .mainBottom button {
+    width: 90%;
+  }
+  #results {
+    max-width: 90%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 772px) and (max-width: 925px) {
+  .greet h2 {
+    display: none;
+  }
+}
+
+/* Medium Screens (e.g., Tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sideBar {
+    width: 15vw; /* Sidebar takes 20% width */
+  }
+  .main {
+    width: 80vw; /* Main content takes 80% width */
+    margin-left: auto; /* Adjust left margin */
+  }
+
+
+
+  #Images {
+    display: none;
+  }
+
+  .cards {
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: center; /* Center cards horizontally */
+    display: none;
+  }
+
+  .subCards {
+    width: 45%; /* Cards take up almost half the width */
+    margin-bottom: 10px;
+  }
+  .searchBar {
+    width: 80vw;
+  }
+  .mainBottom {
+    flex-wrap: wrap;
+  }
+  .mainBottom button {
+    width: 40%;
+  }
+}
